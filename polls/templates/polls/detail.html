@@ -1,0 +1,7 @@
+<h1>{{ question }}</h1>
+<ol>
+    {%for choice in question.choice_set.all%}
+        <li>{{choice.choice_text}}</li>
+    {%endfor%}
+</ol>
+<p>Hint: <strong>{{question.hint_set.first}}</strong></p>
