@@ -15,13 +15,17 @@
     <link rel="stylesheet" href="{% static '/polls/detail.css' %}"></link>
   </head>
   <body>
+
     <div style="width=100%;"><form class="poll_form" action="{% url 'polls:vote' question.id %}" method="post">
       {% csrf_token %}
       <fieldset  class="poll_fieldset"> 
         <legend><h1>{{ question.question_text }}</h1></legend>
         {% if error_message %}
         <p><strong>{{ error_message }}</strong></p>
-        {% endif %} {% for choice in question.choice_set.all %}
+        {% endif %}
+        
+        {% comment %} This for loop generates the choices {% endcomment %}
+        {% for choice in question.choice_set.all %}
         <label  for="choice{{ forloop.counter }}" class="container">{{ choice.choice_text }}
           <input 
           type="radio"
@@ -35,8 +39,10 @@
         {% endfor %}
     
         <p>Hint: <strong>{{question.hint_set.first}}</strong></p>
+        
+      
+        <div style="width=100%;"><input class="vote_button" type="submit" value="Vote" /></div>
       </fieldset>
-      <div style="width=100%;"><input class="vote_button" type="submit" value="Vote" /></div>
     </form></div>
     
     <script src="" async defer></script>
