@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: white url("images/background.avif") no-repeat;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    padding:  20px;
+}
+
+li {
+    color: white;
+}
+
+li a {
+    color: white;
+}
