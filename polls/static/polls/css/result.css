@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: white;
+  background-color: rgb(39, 39, 39);
+  background-repeat: no-repeat;
+  min-height: 200px;
+  min-width: 300px;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  padding: 20px;
+}
+
+.vote_again_button {
+    color: white;
+    display: block;
+    background-color: teal;
+    text-decoration: none;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 200px;
+    margin: auto;
+    text-align: center;
+}
+
+.vote_again_button:hover {
+    background-color: rgb(1, 145, 145);
+}
+
+.vote_again_button:active {
+    background-color: rgb(0, 97, 97);
+}

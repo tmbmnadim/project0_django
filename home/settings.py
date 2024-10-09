@@ -44,7 +44,7 @@ MIDDLEWARE = [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
-ROOT_URLCONF = "project0.urls"
+ROOT_URLCONF = "home.urls"
 
 TEMPLATES = [
     {
@@ -62,7 +62,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "project0.wsgi.application"
+WSGI_APPLICATION = "home.wsgi.application"
 
 
 # Database
@@ -117,10 +117,9 @@ STATIC_FILES_FINDERS = [
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
-# STATICFILES_DIRS = [
-#     BASE_DIR / "static",
-#     # "polls/static/",
-# ]
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
