@@ -22,6 +22,7 @@ INTERNAL_IPS = [
 # Application definition
 
 INSTALLED_APPS = [
+    "home.apps.HomeConfig",
     "polls.apps.PollsConfig",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -44,7 +45,7 @@ MIDDLEWARE = [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
-ROOT_URLCONF = "home.urls"
+ROOT_URLCONF = "base.urls"
 
 TEMPLATES = [
     {
@@ -62,7 +63,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "home.wsgi.application"
+WSGI_APPLICATION = "base.wsgi.application"
 
 
 # Database

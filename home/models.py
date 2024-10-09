@@ -1,5 +1,4 @@
 from django.db import models
-from django.contrib import admin
 
 class SiteDetails(models.Model):
     """Model definition for SiteDetails."""

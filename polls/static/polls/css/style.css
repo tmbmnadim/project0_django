@@ -1,17 +1,3 @@
-* {
-    background-color: rgb(39, 39, 39);
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: rgb(39, 39, 39);
-    height: 100%;
-    width: 100%;
-    padding:  20px;
-}
-
 .pollOptions{
     width: 100%;
     display: flex;
