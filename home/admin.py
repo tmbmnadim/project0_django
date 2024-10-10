@@ -1,5 +1,15 @@
 from django.contrib import admin
-from .models import SiteDetails
+from .models import Services, SiteDetails
 
-# Register your models here.
-admin.site.register(SiteDetails)
+class ServiceInline(admin.TabularInline):
+    model = Services
+    extra = 1
+    fields = ["name", "details"]
+
+
+class SiteDetailsAdmin(admin.ModelAdmin):
+    list_display = ["name", "about", "phone", "email", "address", "partner"]
+    inlines = [ServiceInline]
+
+
+admin.site.register(SiteDetails, SiteDetailsAdmin)

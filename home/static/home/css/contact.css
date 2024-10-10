@@ -1,0 +1,19 @@
+.contact_details_box {
+    background-color: rgb(82, 82, 82);
+    display: block;
+    width: 40%;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.contact_content_table {
+    width: 100%;
+    font-size: 20px;
+}
+
+.contact_content_td {
+    padding: 5px 10px;
+}

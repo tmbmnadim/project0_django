@@ -1,0 +1,29 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'home/css/contact.css' %}">
+{% endblock stylesheet %}
+{% block content %}
+    <div class="contact_details_box">
+        <h1 class="contact_title">Contact Me:</h1>
+        <br />
+        <table class="contact_content_table">
+            <tr class="contact_content_tr">
+                <td class="contact_content_td">Email</td>
+                <td class="contact_content_td">: {{ site_details.email }}</td>
+            </tr>
+            <tr class="contact_content_tr">
+                <td class="contact_content_td">Phone</td>
+                <td class="contact_content_td">: {{ site_details.phone }}</td>
+            </tr>
+            <tr class="contact_content_tr">
+                <td class="contact_content_td">Address</td>
+                <td class="contact_content_td">: {{ site_details.address }}</td>
+            </tr>
+            <tr class="contact_content_tr">
+                <td class="contact_content_td">Partner</td>
+                <td class="contact_content_td">: <a href="https://tmbmnadim.blogspot.com/" target="_blank">{{ site_details.partner }}</a></td>
+            </tr>
+        </table>
+    </div>
+{% endblock content %}

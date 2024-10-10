@@ -1,13 +1,25 @@
+{% extends "base/base.html" %}
 {% load static %}
-
-<link rel="stylesheet" href="{% static 'polls/css/result.css' %}" />
-
-<h1>{{ question.question_text }}</h1>
-
-<ul>
-{% for choice in question.choice_set.all %}
-    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
-{% endfor %}
-</ul>
-
-<a class="vote_again_button" href="{% url 'polls:detail' question.id %}" type="button">Vote again?</a>
+{% block stylesheet %}
+  <link rel="stylesheet" href="{% static 'polls/css/result.css' %}" />
+{% endblock stylesheet %}
+{% block content %}
+  <h1 class="page_title">{{ question.question_text }}</h1>
+<br/>
+<table class="result_table">
+  <tr class="table_header">
+    <th class="table_header_text">Answer</th>
+    <th class="table_header_text_2">Vote Count</th>
+  </tr>
+  {% for choice in question.choice_set.all %}
+    <tr class="table_content">
+      <td class="table_content_text">{{ choice.choice_text }}</td>
+      <td class="table_content_text_2">{{ choice.votes }} vote{{ choice.votes|pluralize }}</td>
+    </tr>
+  {% endfor %}
+</table>
+<br/>
+<a class="vote_again_button"
+   href="{% url 'polls:detail' question.id %}"
+   type="button">Vote again?</a>
+{% endblock content %}

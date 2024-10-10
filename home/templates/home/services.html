@@ -1,0 +1,21 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'home/css/services.css' %}">
+{% endblock stylesheet %}
+
+{% block content %}
+<h1 class="services_title">Our Services</h1>
+<br/>
+<div class="services_content">
+{% for service in site_details.services_set.all %}
+<h2 class="services_content_name">{{ service.name }}:</h2>
+<br/>
+<p class="services_content_details">{{ service.details }}</p>
+<br/>
+<br/>
+{% endfor %}
+</div>
+
+{% endblock content %}

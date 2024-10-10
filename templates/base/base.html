@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" meta="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>PollyFy
+      {% block title %}
+        | Polls
+      {% endblock title %}
+    </title>
+    <meta name="keywords" content="en-us" />
+    <meta name="description" content="en-us" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'base/css/base.css' %}" />
+    {% block stylesheet %}
+    {% endblock stylesheet %}
+  </head>
+  <body>
+    <div>
+      {% block navbar %}
+        <header class="header">
+          <nav class="header__nav" id="navbar">
+            <ul class="header__list">
+              <li class="header__item">
+                <a href="{% url 'home:homepage' %}" class="header__link">Home</a>
+              </li>
+              <li class="header__item">
+                <a class="header__separator"></a>
+              </li>
+              <li class="header__item">
+                <a href="{% url 'home:about' %}" class="header__link">About</a>
+              </li>
+              <li class="header__item">
+                <a class="header__separator"></a>
+              </li>
+              <li class="header__item">
+                <a href="{% url 'home:services' %}" class="header__link">Services</a>
+              </li>
+              <li class="header__item">
+                <a class="header__separator"></a>
+              </li>
+              <li class="header__item">
+                <a href="{% url 'home:contact' %}" class="header__link">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+      {% endblock navbar %}
+    </div>
+
+    
+    {% block navbarTopExtention %}
+    {% endblock navbarTopExtention %}
+
+    <div class="body_content">
+      {% block content %}
+      {% endblock content %}
+    </div>
+  </body>
+</html>
