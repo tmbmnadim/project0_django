@@ -1,0 +1,16 @@
+<div class="product-card">
+    <img height="300" width="100" src="{{ product.product_image.url }}" alt="{{ product.product_name }}" class="product-image">
+    <h3 class="product-name">{{ product.product_name }}</h3>
+    <p class="product-description">{{ product.product_description|truncatewords:10 }}</p>
+    <p class="product-price">${{ product.product_price }}</p>
+    <div class="product-rating">
+        {% for i in "12345" %}
+            {% if forloop.counter <= product.product_rating %}
+                <span class="star filled">★</span>
+            {% else %}
+                <span class="star">★</span>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% comment %} <a href="{% url 'ecomercetest:product_detail' product.id %}" class="product-button">Buy Now</a> {% endcomment %}
+</div>

@@ -1,0 +1,17 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'ecomercetest/css/style.css' %}" />
+{% endblock stylesheet %}
+{% block content %}
+    <h1>List of Products:</h1>
+    {% if latest_product_list %}
+        <div class="list_of_products">
+            {% for product in latest_product_list %}
+                <a href="{% url 'ecomercetest:product_detail' product.id %}">{% include "ecomercetest/_product_card.html" %}</a>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No products are available.</p>
+    {% endif %}
+{% endblock content %}

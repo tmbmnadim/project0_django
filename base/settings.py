@@ -24,6 +24,7 @@ INTERNAL_IPS = [
 INSTALLED_APPS = [
     "home.apps.HomeConfig",
     "polls.apps.PollsConfig",
+    "ecomercetest.apps.EcomercetestConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -75,6 +76,10 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
+# Media files (User uploaded files)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 
 # Password validation
