@@ -1,8 +1,46 @@
 {% extends "base/base.html" %}
-
+{% load static %}
+{% block title %}
+    Product Detail
+{% endblock title %}
+{% block stylesheet %}
+    <link rel="stylesheet"
+          href="{% static 'ecomercetest/css/product_detail.css' %}">
+{% endblock stylesheet %}
 {% block content %}
-    <h1>{{ product.product_name }}</h1>
-    <p>{{ product.product_description }}</p>
-    <p>Price: ${{ product.product_price }}</p>
-    <p>Stock: {{ product.product_stock }}</p>
+    <div class="product_detail_page">
+        <div class="product_detail_container">
+            {% if product.image %}
+                <img height="300"
+                     width="100"
+                     src="{{ product.image.url }}"
+                     alt="{{ product.name }}"
+                     class="product_image">
+            {% endif %}
+            <div class="product_detail_info">
+                <h1 class="product_name">{{ product.name }}</h1>
+                <p class="product_details">{{ product.description }}</p>
+                <p class="product_price">
+                    <strong>Price:</strong> ${{ product.price }}
+                </p>
+                <p>
+                    <strong>Category:</strong> {{ product.category.name }}
+                </p>
+                <p>
+                    <strong>Stock:</strong> {{ product.stock }}
+                </p>
+            </div>
+        </div>
+        <div class="more_products_container">
+            {% if similar_product_list %}
+                <div class="list_of_products">
+                    {% for single in similar_product_list %}
+                        <a href="{% url 'ecomercetest:product_detail' single.id %}">{% include "ecomercetest/_product_card.html" %}</a>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p>No products are available.</p>
+            {% endif %}
+        </div>
+    </div>
 {% endblock content %}

@@ -8,7 +8,7 @@
     {% if latest_product_list %}
         <div class="list_of_products">
             {% for product in latest_product_list %}
-                <a href="{% url 'ecomercetest:product_detail' product.id %}">{% include "ecomercetest/_product_card.html" %}</a>
+                <a href="{% url 'ecomercetest:product_detail' (product.id, latest_product_list) %}">{% include "ecomercetest/_product_card.html" %}</a>
             {% endfor %}
         </div>
     {% else %}
