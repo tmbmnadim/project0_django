@@ -40,15 +40,17 @@
         </div>
         <div class="more_products_container">
             {% if similar_product_list %}
-            <div class="list_of_products">
-                {% for single in similar_product_list %}
-                    <a href="{% url 'ecomercetest:product_detail' single.id %}">
-                        {% include "ecomercetest/_product_card.html" with product=single %}
-                    </a>
-                {% endfor %}
-            </div>
+                <div class="list_of_products">
+                    {% for single in similar_product_list %}
+                        <div>
+                            <a href="{% url 'ecomercetest:product_detail' single.id %}">
+                                {% include "ecomercetest/_product_card.html" with product=single %}
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
             {% else %}
-                <p>No products are available.</p>
+                <p>No similar products are available.</p>
             {% endif %}
         </div>
     </div>

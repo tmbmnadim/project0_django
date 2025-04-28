@@ -3,9 +3,7 @@
     flex-direction: row;
     align-items: flex-start;
     height: 100%;
-    /* Full viewport height */
     overflow: hidden;
-    /* Prevent scrolling for the product detail section */
 }
 
 .product_detail_container {
@@ -21,7 +19,6 @@
 
 .more_products_container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
     gap: 20px;
     width: 40%;
     height: 85vh;
